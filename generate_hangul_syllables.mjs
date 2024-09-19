@@ -10,6 +10,7 @@ for (const line of lines) {
   if (line === 'EndChars') {
     break;
   }
+  console.log(line);
   if (line === 'StartChar: uniE000') {
     isPua = true;
     continue;
@@ -34,12 +35,10 @@ for (const line of lines) {
       continue;
     }
   }
-  //console.log(line);
 }
-console.log('puaGid:', puaGid);
-console.log('korGid:', korGid);
-console.log('korWidth:', korWidth);
-process.exit(1);
+//console.log('puaGid:', puaGid);
+//console.log('korGid:', korGid);
+//console.log('korWidth:', korWidth);
 
 const NUM_CHO = 19;
 const NUM_JUNG = 21;
@@ -76,7 +75,7 @@ const cho_kind_by_jung = [
 //ㅏ,ㅐ,ㅑ,ㅒ,ㅓ,ㅔ,ㅕ,ㅖ,ㅗ,ㅘ,ㅙ,ㅚ,ㅛ,ㅜ,ㅝ,ㅞ,ㅟ,ㅠ,ㅡ,ㅢ,ㅣ
   0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 2, 0,
 ];
-const width = 1400; // 4000 for for 7x12x3
+const width = korWidth; // 1400 for 7x12, 4200 for 7x12x3
 
 let code = KOR;
 let gid = KOR_GID;
