@@ -1,3 +1,46 @@
+import { readFileSync } from 'node:fs';
+const SFD_FILE = process.argv[2] || '7x12.sfd';
+const lines = readFileSync(SFD_FILE, 'utf8').split('\n');
+let isPua = false;
+let puaGid = 0;
+let korGid = 0;
+let korWidth = 0;
+for (const line of lines) {
+  // ignore after EndChars 
+  if (line === 'EndChars') {
+    break;
+  }
+  if (line === 'StartChar: uniE000') {
+    isPua = true;
+    continue;
+  }
+  if (isPua) {
+    const matchEncoding = /Encoding: (\d+) (\d+) (\d+)/.exec(line);
+    if (matchEncoding) {
+      const gid = parseInt(matchEncoding[3], 10);
+      if (matchEncoding[1] === '57344') { // 0xE000
+        puaGid = gid;
+      }
+      if (gid > korGid) {
+        korGid = gid;
+      }
+    }
+    const matchWidth = /Width: (\d+)/.exec(line);
+    if (matchWidth) {
+      const width = parseInt(matchWidth[1], 10);
+      if (width > korWidth) {
+        korWidth = width;
+      }
+      continue;
+    }
+  }
+  //console.log(line);
+}
+console.log('puaGid:', puaGid);
+console.log('korGid:', korGid);
+console.log('korWidth:', korWidth);
+process.exit(1);
+
 const NUM_CHO = 19;
 const NUM_JUNG = 21;
 const NUM_JONG = 28; // with filler
@@ -13,10 +56,10 @@ const PUA = 0xe000;
 
 // TODO: find GID from sfd file
 // last GID + 1
-const KOR_GID = 205;
+const KOR_GID = korGid + 1;
 // StartChar: uniE000
 // Encoding: 57344 57344 99
-const PUA_GID = 99;
+const PUA_GID = puaGid;
 
 const CHO = PUA; // 초성 글립(3종류)
 const JUNG = PUA + NUM_CHO * CHO_KIND; // 중성 글립(1종류)
