@@ -6,7 +6,7 @@ Function bitsnpicas {
     & "${env:JAVA_HOME}\bin\java.exe" -jar "$HOME\apps\bitsnpicas\BitsNPicas.jar" $args
 }
 
-rm *.sfd
+#rm *.sfd
 rm *.ttf
 rm *.otf
 rm *.woff
