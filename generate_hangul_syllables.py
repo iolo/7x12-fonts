@@ -1,8 +1,11 @@
 #!/usr/bin/fontforge -script
 
 import fontforge
+import sys
 
-f = fontforge.open("test.ttf")
+name = sys.argv[1]
+
+f = fontforge.open('temp.ttf')
 
 NUM_CHO = 19
 NUM_JUNG = 21
@@ -71,8 +74,8 @@ f.os2_family_class = 49
 f.os2_codepages = (0x00200000, 0x00000000)
 f.os2_unicoderanges = (0x10000001, 0x11000000, 0x00000000, 0x00000000)
 
-f.generate("test2.ttf")
-f.generate("test2.otf")
-f.generate("test2.woff")
-f.generate("test2.woff2")
+f.generate(f'{name}.ttf', flags=('short-post'))
+f.generate(f'{name}.otf', flags=('short-post'))
+f.generate(f'{name}.woff')
+f.generate(f'{name}.woff2')
 
