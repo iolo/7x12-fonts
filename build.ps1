@@ -19,3 +19,7 @@ rm temp.ttf
 bitsnpicas convertbitmap -f ttf -o temp.ttf 7x12x3.kbitx
 fontforge --lang=py --script generate_hangul_syllables.py 7x12x3
 rm temp.ttf
+
+bitsnpicas convertbitmap -f ttf -o temp.ttf 7x12-bold.kbitx
+fontforge --lang=py --script generate_hangul_syllables.py 7x12-bold
+rm temp.ttf
