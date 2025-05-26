@@ -9,9 +9,12 @@
 <prop id="xHeight" value="5"/>
 <prop id="capHeight" value="7"/>
 <name id="1" value="7x12"/>
+<name id="2" value="bold"/>
 <name id="4" value="7x12"/>
-<name id="6" value="7x12"/>
+<name id="6" value="7x12-bold"/>
 <name id="16" value="7x12"/>
+<name id="17" value="bold"/>
+<name id="18" value="7x12-bold"/>
 <g u="0" x="0" y="9" w="7" d="DAdIBUEHQwFExQD/AP8AQsUA/wD/AELFAP8A/wBEAUMHQQVCBUg"/>
 <g u="1" x="0" y="9" w="7" d="DAdIBUEHQwLG/wD/AP8AQsQA/wD/AsX/AP8A/wLC/wBDAUMHQQVCBUg"/>
 <g u="2" x="0" y="9" w="7" d="DAdIBUEHQwFEwgD/A0LDAP8ARMQA/wD/AkMBQwdBBUIFSA"/>
