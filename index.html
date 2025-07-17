@@ -7,32 +7,24 @@
       @font-face {
         font-family: '7x12';
         src:
-          url('7x12.woff') format('woff'),
-          url('7x12.woff2') format('woff2'),
-          url('7x12.ttf') format('truetype'),
-          url('7x12.otf') format('opentype');
+          url('./fonts/7x12.woff') format('woff'),
+          url('./fonts/7x12.woff2') format('woff2'),
+          url('./fonts/7x12.ttf') format('truetype'),
+          url('./fonts/7x12.otf') format('opentype');
       }
       @font-face {
         font-family: '7x12x3';
         src:
-          url('7x12x3.woff') format('woff'),
-          url('7x12x3.woff2') format('woff2'),
-          url('7x12x3.ttf') format('truetype'),
-          url('7x12x3.otf') format('opentype');
-      }
-      @font-face {
-        font-family: '7x12-bold';
-        src:
-          url('7x12-bold.woff') format('woff'),
-          url('7x12-bold.woff2') format('woff2'),
-          url('7x12-bold.ttf') format('truetype'),
-          url('7x12-bold.otf') format('opentype');
+          url('./fonts/7x12x3.woff') format('woff'),
+          url('./fonts/7x12x3.woff2') format('woff2'),
+          url('./fonts/7x12x3.ttf') format('truetype'),
+          url('./fonts/7x12x3.otf') format('opentype');
       }
       * {
         color: #0f0;
         background: #000;
       }
-      article {
+      main {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
@@ -52,14 +44,16 @@
     <header>
       <h1>7x12-fonts</h1>
       <nav>
+        <a href="https://github.com/iolo/7x12-fonts/releases">Download</a>
         <a href="https://github.com/iolo/7x12-fonts">GitHub</a>
         <a href="https://iolo.kr/">Home</a>
       </nav>
     </header>
-    <article>
-      <section style="font-family: '7x12'">
+    <main>
+      <section style="font-family:'7x12'">
         <h1>7x12</h1>
-        <p>
+        <p contenteditable spellcheck="false">
+          il1I0OoQaCGcdb69gqpyj<br />
           다람쥐 헌 쳇바퀴에 타고파<br />
           닭 콩팥 훔친 집사<br />
           물컵 속 팥 찾던 형<br />
@@ -89,9 +83,10 @@
           Travelling Beneath the azure sky in our jolly ox-cart, we often hit bumps quite hard.<br />
         </p>
       </section>
-      <section style="font-family: '7x12x3'">
+      <section style="font-family:'7x12x3'">
         <h1>7x12x3</h1>
-        <p>
+        <p contenteditable spellcheck="false">
+          il1I0OoQaCGcdb69gqpyj<br />
           다람쥐 헌 쳇바퀴에 타고파<br />
           닭 콩팥 훔친 집사<br />
           물컵 속 팥 찾던 형<br />
@@ -121,42 +116,9 @@
           Travelling Beneath the azure sky in our jolly ox-cart, we often hit bumps quite hard.<br />
         </p>
       </section>
-      <section style="font-family: '7x12-bold'">
-        <h1>7x12-bold</h1>
-        <p>
-          다람쥐 헌 쳇바퀴에 타고파<br />
-          닭 콩팥 훔친 집사<br />
-          물컵 속 팥 찾던 형<br />
-          동틀 녘 햇빛 포개짐<br />
-          자동차 바퀴 틈새가 파랗니<br />
-          해태 옆 치킨집 닭맛<br />
-          코털 팽 대감네 첩 좋소<br />
-          닭 잡아서 치킨파티 함<br />
-          초코볼은 티피가 맛 좋다<br />
-          파티에 참석한 키다리 부자<br />
-          펄코트 못 받은 척하자<br />
-          추운 겨울에는 따뜻한 커피와 티를 마셔야지요<br />
-          그는 미쳐서 칼부림하는 인성파탄자일 뿐이다<br />
-          동녘 구름 틈새로 퍼지는 햇빛<br />
-          해질녘 파도 속의 첨탑<br />
-          체르노빌 같던 후쿠시마 원전 폭발<br />
-          The quick brown fox jumps over a lazy dog.<br />
-          Pack my box with five dozen liquor jugs.<br />
-          Jackdaws love my big sphinx of quartz.<br />
-          The five boxing wizards jump quickly.<br />
-          Adjusting quiver and bow, Zompyc killed the fox.<br />
-          Bright vixens jump; dozy fowl quack.<br />
-          Quick wafting zephyrs vex bold Jim.<br />
-          My faxed joke won a pager in the cable TV quiz show.<br />
-          Grumpy wizards make toxic brew for the evil Queen and Jack.<br />
-          Sphinx of black quartz, judge my vow.<br />
-          Travelling Beneath the azure sky in our jolly ox-cart, we often hit bumps quite hard.<br />
-        </p>
-      </section>
-      <section style="font-family: '7x12x3-bold'">
-        <h1>7x12x3-bold</h1>
-        <p>Coming soon...</p>
-      </section>
-    </article>
+    </main>
+    <footer>
+      <small>&copy; 1973-2025 iolothebard. all rights reserved.</small>
+    </footer>
   </body>
 </html>
