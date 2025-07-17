@@ -1,21 +1,22 @@
 #!/bin/bash
 
-set -x
+function exec_fontforge {
+    fontforge $@
+}
 
-rm *.ttf *.sfd *.woff *.woff2
+function exec_bitsnpicas {
+    java -jar ./BitsNPicas.jar $@
+}
 
-bitsnpicas.sh convertbitmap -f ttf -o 7x12.ttf 7x12.kbitx
-fontforge -lang=ff -c 'Open($1); Save($2)' 7x12.ttf temp.sfd
-node generate_hangul_syllables.mjs temp.sfd > 7x12.sfd
-rm temp.sfd
-fontforge -lang=ff -c 'Open($1); Generate($2)' 7x12.sfd 7x12.ttf
-fonttools ttLib --flavor woff -o 7x12.woff 7x12.ttf
-fonttools ttLib --flavor woff2 -o 7x12.woff2 7x12.ttf
+function buildFont {
+    rm "./fonts/$1*"
+    exec_bitsnpicas convertbitmap -f ttf -o temp.ttf "src/$1.kbitx"
+    exec_fontforge --lang=py --script generate_hangul_syllables.py "fonts/$1"
+    if [ -x "./FontPatcher/font-patcher" ]; then
+      exec_fontforge --lang=py --script ./FontPatcher/font-patcher --complete --out fonts "fonts/$1.ttf"
+    fi
+    rm temp.ttf
+}
 
-bitsnpicas.sh convertbitmap -f ttf -o 7x12x3.ttf 7x12x3.kbitx
-fontforge -lang=ff -c 'Open($1); Save($2)' 7x12x3.ttf temp.sfd
-node generate_hangul_syllables.mjs temp.sfd > 7x12x3.sfd
-rm temp.sfd
-fontforge -lang=ff -c 'Open($1); Generate($2)' 7x12x3.sfd 7x12x3.ttf
-fonttools ttLib --flavor woff -o 7x12x3.woff 7x12x3.ttf
-fonttools ttLib --flavor woff2 -o 7x12x3.woff2 7x12x3.ttf
+buildFont "7x12"
+buildFont "7x12x3"
