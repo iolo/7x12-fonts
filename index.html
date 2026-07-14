@@ -2,6 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
+    <meta viewport="width=device-width, initial-scale=1" />
     <title>7x12-fonts</title>
     <style>
       @font-face {
@@ -13,18 +14,18 @@
           url('./fonts/7x12.otf') format('opentype');
       }
       @font-face {
-        font-family: '7x12x3';
+        font-family: '5x12';
         src:
-          url('./fonts/7x12x3.woff') format('woff'),
-          url('./fonts/7x12x3.woff2') format('woff2'),
-          url('./fonts/7x12x3.ttf') format('truetype'),
-          url('./fonts/7x12x3.otf') format('opentype');
+          url('./fonts/5x12.woff') format('woff'),
+          url('./fonts/5x12.woff2') format('woff2'),
+          url('./fonts/5x12.ttf') format('truetype'),
+          url('./fonts/5x12.otf') format('opentype');
       }
       * {
         color: #0f0;
         background: #000;
       }
-      main {
+      article {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
@@ -32,10 +33,10 @@
       h1 {
         font-size: 32px;
       }
-      p {
-        font-size: 16px;
-        line-height: 20px;
-        width: 20em;
+      #previewText {
+        font-family: '7x12', monospace;
+        font-size: 32px;
+        line-height: 1.5em;
         margin: 0 auto;
       }
     </style>
@@ -49,11 +50,26 @@
         <a href="https://iolo.kr/">Home</a>
       </nav>
     </header>
-    <main>
-      <section style="font-family:'7x12'">
-        <h1>7x12</h1>
-        <p contenteditable spellcheck="false">
-          il1I0OoQaCGcdb69gqpyj<br />
+    <article>
+      <section>
+        <form method="get">
+          <select id="fontSelect">
+            <option value="">글꼴</option>
+            <option>7x12</option>
+            <option>5x12</option>
+          </select>
+          <select id="sizeSelect">
+            <option value="">크기</option>
+            <option>12px</option>
+            <option>16px</option>
+            <option>246px</option>
+            <option>32px</option>
+            <option>48px</option>
+            <option>64px</option>
+            <option>96px</option>
+          </select>
+        </form>
+        <p id="previewText">
           다람쥐 헌 쳇바퀴에 타고파<br />
           닭 콩팥 훔친 집사<br />
           물컵 속 팥 찾던 형<br />
@@ -69,7 +85,24 @@
           그는 미쳐서 칼부림하는 인성파탄자일 뿐이다<br />
           동녘 구름 틈새로 퍼지는 햇빛<br />
           해질녘 파도 속의 첨탑<br />
-          체르노빌 같던 후쿠시마 원전 폭발<br />
+          체르노빌 같롤던 후쿠시마 원전 폭발<br />
+          가나다라마바사아자차카타파하<br />
+          개내대래매배배애재채캐태패해<br />
+          거너더러머버서어저처커터퍼허<br />
+          게네데레메베세에제체케테페헤<br />
+          고노도로모보소오조초코토포호<br />
+          교뇨됴료묘뵤쇼요죠쵸쿄툐표효<br />
+          구누두루무부수우주추쿠투푸후<br />
+          규뉴듀류뮤뷰슈유쥬츄큐튜퓨휴<br />
+          과놔돠롸뫄봐솨와좌촤콰톼퐈화<br />
+          궈눠둬뤄뭐붜숴워줘춰쿼퉈풔훠<br />
+          각난닫랄맘밥삿앙잦찿캌탙팦핳<br />
+          곡논돋롤몸봅솟옹좆찿콬톹퐆홓<br />
+          국눈둗룰뭄붑숫웅줒춪쿸퉅풒훟<br />
+          곽놘돧뢀뫔봡솻왕좢촺쾈퇕퐢홯<br />
+          괛놵됂뢝뫪봷쇑왪좷쵒쾎퇬뾆뢣<br />
+          궧뉁뒎뤩뭶뷃쉝웶쥃췞퀚퉸쀒뤯<br />
+          il1I0OoQaCGcdbgqpyj<br />
           The quick brown fox jumps over a lazy dog.<br />
           Pack my box with five dozen liquor jugs.<br />
           Jackdaws love my big sphinx of quartz.<br />
@@ -81,44 +114,37 @@
           Grumpy wizards make toxic brew for the evil Queen and Jack.<br />
           Sphinx of black quartz, judge my vow.<br />
           Travelling Beneath the azure sky in our jolly ox-cart, we often hit bumps quite hard.<br />
+          1234567890-=[],.;'\ ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+          !@#$%^&amp;*()_+{}&lt;&gt;"?| abcdefghijklmnopqrstuvwxyz<br />
         </p>
       </section>
-      <section style="font-family:'7x12x3'">
-        <h1>7x12x3</h1>
-        <p contenteditable spellcheck="false">
-          il1I0OoQaCGcdb69gqpyj<br />
-          다람쥐 헌 쳇바퀴에 타고파<br />
-          닭 콩팥 훔친 집사<br />
-          물컵 속 팥 찾던 형<br />
-          동틀 녘 햇빛 포개짐<br />
-          자동차 바퀴 틈새가 파랗니<br />
-          해태 옆 치킨집 닭맛<br />
-          코털 팽 대감네 첩 좋소<br />
-          닭 잡아서 치킨파티 함<br />
-          초코볼은 티피가 맛 좋다<br />
-          파티에 참석한 키다리 부자<br />
-          펄코트 못 받은 척하자<br />
-          추운 겨울에는 따뜻한 커피와 티를 마셔야지요<br />
-          그는 미쳐서 칼부림하는 인성파탄자일 뿐이다<br />
-          동녘 구름 틈새로 퍼지는 햇빛<br />
-          해질녘 파도 속의 첨탑<br />
-          체르노빌 같던 후쿠시마 원전 폭발<br />
-          The quick brown fox jumps over a lazy dog.<br />
-          Pack my box with five dozen liquor jugs.<br />
-          Jackdaws love my big sphinx of quartz.<br />
-          The five boxing wizards jump quickly.<br />
-          Adjusting quiver and bow, Zompyc killed the fox.<br />
-          Bright vixens jump; dozy fowl quack.<br />
-          Quick wafting zephyrs vex bold Jim.<br />
-          My faxed joke won a pager in the cable TV quiz show.<br />
-          Grumpy wizards make toxic brew for the evil Queen and Jack.<br />
-          Sphinx of black quartz, judge my vow.<br />
-          Travelling Beneath the azure sky in our jolly ox-cart, we often hit bumps quite hard.<br />
-        </p>
-      </section>
-    </main>
+    </article>
     <footer>
-      <small>&copy; 1973-2025 iolothebard. all rights reserved.</small>
+      <small>&copy; 1973-2026 iolothebard. all rights reserved.</small>
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const fontSelect = document.querySelector('#fontSelect');
+        const sizeSelect = document.querySelector('#sizeSelect');
+        const previewText = document.querySelector('#previewText');
+
+        function updatePreview() {
+          previewText.style.fontFamily = `"${fontSelect.value}"`;
+          previewText.style.fontSize = sizeSelect.value;
+        }
+
+        fontSelect.addEventListener('change', updatePreview);
+        sizeSelect.addEventListener('change', updatePreview);
+
+        const params = new URLSearchParams(location.search);
+        if (params.has('font')) {
+          fontSelect.value = params.get('font');
+        }
+        if (params.has('size')) {
+          sizeSelect.value = params.get('size');
+        }
+        updatePreview();
+      });
+    </script>
   </body>
 </html>

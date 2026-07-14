@@ -19,4 +19,4 @@ function buildFont {
 }
 
 buildFont "7x12"
-buildFont "7x12x3"
+buildFont "5x12"
