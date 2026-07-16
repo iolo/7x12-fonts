@@ -53,21 +53,22 @@
     <article>
       <section>
         <form method="get">
-          <select id="fontSelect">
+          <select id="fontSelect" name="font">
             <option value="">글꼴</option>
             <option>7x12</option>
             <option>5x12</option>
           </select>
-          <select id="sizeSelect">
+	  <select id="sizeSelect" name="size">
             <option value="">크기</option>
             <option>12px</option>
             <option>16px</option>
-            <option>246px</option>
+            <option>24px</option>
             <option>32px</option>
             <option>48px</option>
             <option>64px</option>
             <option>96px</option>
           </select>
+	  <button type="submit">적용</button>
         </form>
         <p id="previewText">
           다람쥐 헌 쳇바퀴에 타고파<br />
@@ -133,8 +134,8 @@
           previewText.style.fontSize = sizeSelect.value;
         }
 
-        fontSelect.addEventListener('change', updatePreview);
-        sizeSelect.addEventListener('change', updatePreview);
+	fontSelect.addEventListener('change', e=>e.target.form.submit());
+	sizeSelect.addEventListener('change', e=>e.target.form.submit());
 
         const params = new URLSearchParams(location.search);
         if (params.has('font')) {
